@@ -1,0 +1,14 @@
+[ 
+    { 
+        "id": 1,
+        "name": "SUMAS"
+    },
+    {
+        "id": 2,
+        "name": "RESTAS"
+    },
+    {
+        "id": 3, 
+        "name": "MULTIPLICACIÓN"
+    }
+]

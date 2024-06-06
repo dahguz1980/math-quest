@@ -1,8 +1,7 @@
-import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, View } from 'react-native'
 import React from 'react'
-import logo1 from '../../assets/logo.webp'
 
-const Header = ({logourl, title}) => {
+const Header = ({logourl}) => {
 
   return (
       <View style={styles.headerContainer}>

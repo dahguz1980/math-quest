@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Card from './Card'
 import { colors } from '../global/colors'
@@ -8,15 +8,17 @@ import { colors } from '../global/colors'
  * @param {*} item 
  * @returns 
  */
-const CategoryItem = ({item}) => {
+const OperationItem = ({item, setOperationSelected = () => {}}) => {
   return (
-    <Card additionalStyles={styles.cardContainer}>
-      <Text style={styles.cardText}>{item.name}</Text>
-    </Card>
+    <Pressable onPress={()=>setOperationSelected(item.id)}>
+      <Card additionalStyles={styles.cardContainer}>
+          <Text style={styles.cardText}>{item.name}</Text>
+      </Card>
+    </Pressable>
   )
 }
 
-export default CategoryItem
+export default OperationItem
 
 const styles = StyleSheet.create({
     cardContainer: {
@@ -32,6 +34,7 @@ const styles = StyleSheet.create({
     },
     cardText: {
         textAlign: "center",
-        fontSize: 18
+        fontSize: 18,
+        fontFamily: 'ComicNeue-Bold',
     }
 })

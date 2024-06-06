@@ -1,15 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Header from '../components/Header'
-import CategoryList from '../components/CategoryList'
-import logo from '../../assets/logo.webp'
-
-const Home = () => {
+import OperationList from '../components/OperationList'
+const Home = ({setOperationSelected = () => {}}) => {
 
   return (
     <View style={styles.container}>
-      <Header logourl={logo} />
-      <CategoryList />
+      <View style={styles.listContainer}>
+        <OperationList setOperationSelected={setOperationSelected} />
+      </View>
+      <Image source={require('../../assets/bg_app.png')} style={styles.bg} ></Image>
     </View>
   )
 }
@@ -18,6 +17,14 @@ export default Home
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    justifyContent: 'space-between'
+  },
+  listContainer: {
+    height: 350,
+  },  
+  bg: {
+    width: '100%',
+    
   }
 })

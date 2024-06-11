@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Platform, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Card from './Card'
 import { colors } from '../global/colors'
@@ -29,12 +29,15 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderLeftColor: colors.legoBlue,
         borderRightColor: colors.legoLigthBlue,
-        borderTopColor: colors.legoYellow,
-        borderBottomColor: colors.legoRed
+        borderTopColor: colors.legoGreen,
+        borderBottomColor: colors.legoRed,
     },
     cardText: {
         textAlign: "center",
         fontSize: 18,
-        fontFamily: 'ComicNeue-Bold',
+        fontFamily: Platform.select({
+          android: 'ComicNeue_700Bold',
+          ios: 'ComicNeue-Bold',
+        }),
     }
 })

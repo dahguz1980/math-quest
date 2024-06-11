@@ -9,7 +9,7 @@ const Star = ({repetitions, colors}) => {
   return (
     <View style={styles.starContainer}>
         {items.map((item) => (
-          <AntDesign name='star' size={24} color={colors[item-1]}  />
+          <AntDesign key={item} name='star' size={24} color={colors[item-1]}  />
         ))}
     </View>
   )

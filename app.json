@@ -25,7 +25,10 @@
     },
     "plugins":  [
       [
-        "expo-font"
+        "expo-font", 
+        {
+          "fonts": ["node_modules/@expo-google-fonts/comic-neue/ComicNeue_700Bold.ttf"]
+        }
       ]
     ]
   }

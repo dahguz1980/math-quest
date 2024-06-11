@@ -3,6 +3,7 @@ import React from 'react'
 import tableBG from '../../assets/tableBg.png'
 
 const GameCard = ({children, additionalStyle}) => {
+    
   return (
     <View style={{...styles.container,...additionalStyle}}>
         <ImageBackground source={tableBG} style={styles.bg}>

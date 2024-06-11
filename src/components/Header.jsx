@@ -1,5 +1,6 @@
-import { Image, StyleSheet, View } from 'react-native'
+import { Image, Platform, StyleSheet, View } from 'react-native'
 import React from 'react'
+import { colors } from '../global/colors'
 
 const Header = ({logourl}) => {
 
@@ -14,17 +15,10 @@ export default Header
 
 const styles = StyleSheet.create({
     headerContainer: {
-        height: 150,
-        backgroundColor: '#FFFBEA',
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.27,
-        shadowRadius: 4.65,
-
-        elevation: 6,
+        height: 155,
+        backgroundColor: colors.bg_cream,
+        borderBottomWidth: 4,
+        borderBottomColor: colors.darkBlue,
     },
     logo: {
         width: 150, // Ajusta el tamaño según sea necesario

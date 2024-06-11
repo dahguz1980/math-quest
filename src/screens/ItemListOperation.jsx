@@ -2,9 +2,8 @@ import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import mathTables from '../data/mathTables.json'
 import TableItem from '../components/TableItem'
-import { colors } from '../global/colors'
 
-const ItemListOperation = ({operationSelected, setOperationSelected}) => {
+const ItemListOperation = ({operationSelected, setOperationSelected=()=>{},setTableSelected=()=>{}}) => {
 
     const [mathTablesFiltered,setMathTablesFilteres] = useState([])
 
@@ -28,13 +27,10 @@ const ItemListOperation = ({operationSelected, setOperationSelected}) => {
         
         <FlatList 
             keyExtractor={ table => table.id.toString()} numColumns={2} showsVerticalScrollIndicator={false}
-            contentContainerStyle={styles.tableContainer} 
+            contentContainerStyle={styles.tableContainer} alwaysBounceVertical={false}
             data={mathTablesFiltered}
-            bounces={false} // Desactiva el efecto de rebote
             renderItem={ ({item}) => 
-                <Pressable>
-                    <TableItem tableName={item.shortName} />
-                </Pressable>
+                <TableItem table={item} setTableSelected={setTableSelected}  />
             }
             />
         
@@ -47,10 +43,11 @@ export default ItemListOperation
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+      flex:1
     },
     tableContainer: {
         justifyContent: 'center',
         alignItems: 'center',
+
     }
 })

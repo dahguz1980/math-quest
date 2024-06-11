@@ -3,7 +3,53 @@
         "id": 1,
         "name": "Tabla 1",
         "shortName": 1,
-        "idOperation" : 1
+        "idOperation" : 1,
+        "operations": [ 
+            {
+                "added": 0,
+                "result": 1       
+            },
+            {
+                "added": 1,
+                "result": 2
+            },
+            {
+                "added": 2,
+                "result": 3
+            },
+            {
+                "added": 3,
+                "result": 4
+            },
+            {
+                "added": 4,
+                "result": 5
+            },
+            {
+                "added": 5,
+                "result": 6
+            },
+            {
+                "added": 6,
+                "result": 7
+            },
+            {
+                "added": 7,
+                "result": 8
+            },
+            {
+                "added": 8,
+                "result": 9
+            },
+            {
+                "added": 9,
+                "result": 10
+            },
+            {
+                "added": 10,
+                "result": 11
+            }
+        ]
     },
     {
         "id": 2,

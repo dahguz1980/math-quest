@@ -7,11 +7,11 @@ import Star from './Star';
 import Card from './Card';
 
 
-const TableItem = ({ table, setTableSelected = () => {} }) => {
+const TableItem = ({ table, navigation}) => {
 
 
 	return (
-		<Pressable onPress={()=>setTableSelected(table.id)}>
+		<Pressable onPress={()=>navigation.navigate("OperationDetail",{tableId: table.shortName})}>
 			<Card additionalStyles={styles.additionalStyle}>
 				<Text style={styles.numb}>{table.shortName}</Text>
 				<Star repetitions={3} colors={[colors.legoLigthBlue, colors.legoLigthBlue, colors.legoLigthBlue]} />

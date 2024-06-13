@@ -2,38 +2,33 @@ import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import mathTables from '../data/mathTables.json'
 import TableItem from '../components/TableItem'
+import { colors } from '../global/colors'
 
-const ItemListOperation = ({operationSelected, setOperationSelected=()=>{},setTableSelected=()=>{}}) => {
+const ItemListOperation = ({route, navigation}) => {
 
-    const [mathTablesFiltered,setMathTablesFilteres] = useState([])
+    const { itemId } = route.params;
+    const [mathTablesFiltered, setMathTablesFiltered] = useState([])
 
     useEffect( () => {
-        const mathTablesFilter = mathTables.filter(table=>table.idOperation===operationSelected)
+        const mathTablesFilter = mathTables.filter(table=>table.idOperation===itemId)
         
         if (mathTablesFilter.length>0) {
-            setMathTablesFilteres(mathTablesFilter)
+            setMathTablesFiltered(mathTablesFilter)
         } else {
-            setMathTablesFilteres([])
+            setMathTablesFiltered([])
         }
-    }, [operationSelected])
+    }, [itemId])
 
   return (
     <View style={styles.container}>
-        <View>
-            <Pressable onPress={() => setOperationSelected('')}>
-                <Text>Atrás</Text>    
-            </Pressable>  
-        </View>
-        
         <FlatList 
             keyExtractor={ table => table.id.toString()} numColumns={2} showsVerticalScrollIndicator={false}
             contentContainerStyle={styles.tableContainer} alwaysBounceVertical={false}
             data={mathTablesFiltered}
             renderItem={ ({item}) => 
-                <TableItem table={item} setTableSelected={setTableSelected}  />
+                <TableItem table={item} navigation={navigation} />
             }
             />
-        
     </View>
 
   )
@@ -43,7 +38,8 @@ export default ItemListOperation
 
 const styles = StyleSheet.create({
     container: {
-      flex:1
+      flex:1,
+      backgroundColor: colors.bg_white,
     },
     tableContainer: {
         justifyContent: 'center',

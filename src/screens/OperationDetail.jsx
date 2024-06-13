@@ -2,15 +2,12 @@ import { Platform, Pressable, StyleSheet, Text, View } from 'react-native'
 import Timer from '../components/Timer'
 import { colors } from '../global/colors'
 
-const OperationDetail = ({ tableSelected, setTableSelected = () => { } }) => {
+const OperationDetail = ({ route}) => {
+
+    const { tableId } = route.params;
 
     return (
         <View style={styles.container}>
-            <View>
-                <Pressable onPress={() => setTableSelected('')}>
-                    <Text>Atrás</Text>
-                </Pressable>
-            </View>
             <View style={styles.info}>
                 <Text style={styles.infoText}>Correctas: <Text style={styles.correct}>12</Text></Text>
                 <Text style={styles.infoText}>Incorrectas: <Text style={styles.incorrect}>12</Text></Text>
@@ -20,7 +17,7 @@ const OperationDetail = ({ tableSelected, setTableSelected = () => { } }) => {
             </View>
                 
             </View>
-            <Text>La tabla seleccionada fue {tableSelected}</Text>
+            <Text>La tabla seleccionada fue {tableId}</Text>
         </View>
     )
 }
@@ -30,7 +27,8 @@ export default OperationDetail
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: colors.bg_white,
     },
     info: {
         flexDirection: 'row',

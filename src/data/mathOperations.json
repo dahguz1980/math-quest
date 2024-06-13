@@ -1,11 +1,11 @@
 [ 
     { 
         "id": 1,
-        "name": "SUMAS"
+        "name": "SUMAR"
     },
     {
         "id": 2,
-        "name": "RESTAS"
+        "name": "RESTAR"
     },
     {
         "id": 3, 

@@ -1,4 +1,4 @@
-import { Platform, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Platform, Pressable, StyleSheet, Text } from 'react-native'
 import React from 'react'
 import Card from './Card'
 import { colors } from '../global/colors'
@@ -8,9 +8,14 @@ import { colors } from '../global/colors'
  * @param {*} item 
  * @returns 
  */
-const OperationItem = ({item, setOperationSelected = () => {}}) => {
+const OperationItem = ({item, navigation}) => {
+
+  const gotoOperationSelected = () => {
+      navigation.navigate("ItemListOperation", {itemId:item.id})
+  }
+
   return (
-    <Pressable onPress={()=>setOperationSelected(item.id)}>
+    <Pressable onPress={()=>gotoOperationSelected()}>
       <Card additionalStyles={styles.cardContainer}>
           <Text style={styles.cardText}>{item.name}</Text>
       </Card>

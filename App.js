@@ -1,26 +1,19 @@
 import { Platform, SafeAreaView, StyleSheet, StatusBar, Text, useWindowDimensions, View } from 'react-native';
-import { useState } from 'react';
 import { useFonts } from 'expo-font';
+import { colors } from './src/global/colors';
+import { ComicNeue_700Bold } from '@expo-google-fonts/comic-neue';
 import logo from './assets/logo.webp'
 import Header from './src/components/Header';
-import ItemListOperation from './src/screens/ItemListOperation';
-import Home from './src/screens/Home';
-import OperationDetail from './src/screens/OperationDetail';
-import { ComicNeue_700Bold } from '@expo-google-fonts/comic-neue';
-import { colors } from './src/global/colors';
-
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
+import Navigator from './src/navigation/Navigator';
 
 
-const Stack = createNativeStackNavigator()
 
 const App = () => {
 
 	// obtener el tanaño del dispositivo
 	const { width, height } = useWindowDimensions()
 	const MIN_WIDTH = 440;  // Ancho mínimo requerido
-	const MIN_HEIGHT = 970; // Altura mínima requerida
+	const MIN_HEIGHT = 920; // Altura mínima requerida
 
 	let [fontsLoaded, fontError] = useFonts({
 		ComicNeue_700Bold,
@@ -40,33 +33,12 @@ const App = () => {
 		);
 	}
 
-	const headerTitle = (route) =>  {
-		const routeName = route.name;
-	  
-		switch (routeName) {
-		  case 'Home':
-			return 'OPERACIONES';
-		  case 'ItemListOperation':
-			return 'TABLAS DE ...';
-		  case 'OperationDetail':
-			return 'TABLA DE  ... DEL  ... ';
-		  default:
-			return 'App';
-		}
-	  }
-
+	
 	return (
 		<View style={styles.container}>
 			<SafeAreaView style={styles.containerSafe}>
 				<Header logourl={logo} />
-				<NavigationContainer>
-					<Stack.Navigator initialRouteName='Home' screenOptions={({route}) => ({
-						headerTitle: headerTitle(route)})}>
-						<Stack.Screen name="Home" component={Home}/>
-						<Stack.Screen name="ItemListOperation" component={ItemListOperation} />
-						<Stack.Screen name="OperationDetail" component={OperationDetail} />
-					</Stack.Navigator>
-				</NavigationContainer>
+				<Navigator />
 			</SafeAreaView>
 		</View>
 	);

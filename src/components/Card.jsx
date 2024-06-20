@@ -13,6 +13,6 @@ export default Card
 
 const styles = StyleSheet.create({
     container: {
-      borderWidth: 8,
+      width: '100%'
     }
 })

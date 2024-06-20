@@ -1,6 +1,7 @@
-import { Platform, Pressable, StyleSheet, Text } from 'react-native'
-import React from 'react'
+import { Image, Platform, Pressable, StyleSheet, Text } from 'react-native'
 import Card from './Card'
+import { useDispatch } from 'react-redux'
+import { titleOperation } from '../features/HeaderTitle/HeaderTitleSlice'
 import { colors } from '../global/colors'
 
 /**
@@ -10,14 +11,20 @@ import { colors } from '../global/colors'
  */
 const OperationItem = ({item, navigation}) => {
 
+  const cargarImagen = require.context("../../assets", true);
+
+  const dispacht = useDispatch()
+
   const gotoOperationSelected = () => {
+      dispacht(titleOperation(item.name))
       navigation.navigate("ItemListOperation", {itemId:item.id})
   }
 
   return (
     <Pressable onPress={()=>gotoOperationSelected()}>
       <Card additionalStyles={styles.cardContainer}>
-          <Text style={styles.cardText}>{item.name}</Text>
+        <Image source={cargarImagen(`./${ item.logo_light }`)}  style={styles.image} />
+        <Text style={styles.cardText}>{item.name}</Text>
       </Card>
     </Pressable>
   )
@@ -27,22 +34,27 @@ export default OperationItem
 
 const styles = StyleSheet.create({
     cardContainer: {
-        width: '100%',
-        justifyContent: "center",
-        marginTop: 45,
-        height: 70,
-        backgroundColor: 'white',
-        borderLeftColor: colors.legoBlue,
-        borderRightColor: colors.legoLigthBlue,
-        borderTopColor: colors.legoGreen,
-        borderBottomColor: colors.legoRed,
+        marginTop: 30,
+        height: 120,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 5,
+        borderColor: colors.darkBlue,
+        borderRadius: '15'
     },
     cardText: {
+        width: '100%',
         textAlign: "center",
-        fontSize: 18,
+        fontSize: 36,
         fontFamily: Platform.select({
           android: 'ComicNeue_700Bold',
           ios: 'ComicNeue-Bold',
         }),
+    },
+    image: {
+      width: 65,
+      height: 65,
+      resizeMode: 'contain',
+      
     }
 })

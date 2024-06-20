@@ -24,7 +24,7 @@ const BottomTabNavigator = () => {
         }
         
     >
-        <Tab.Screen name='Home' component={HomeStackNavigator} options={{
+        <Tab.Screen name='TabHome' component={HomeStackNavigator} options={{
             tabBarIcon:({focused}) => {
                 return (
                     <View>
@@ -33,7 +33,7 @@ const BottomTabNavigator = () => {
                 )
             }
         }}/>
-        <Tab.Screen name='Statistics' component={StatisticsStackNavigator} options={{
+        <Tab.Screen name='TabStatistics' component={StatisticsStackNavigator} options={{
             tabBarIcon:({focused}) => {
                 return (
                     <View>
@@ -42,7 +42,7 @@ const BottomTabNavigator = () => {
                 )
             }
         }}/>
-        <Tab.Screen name='Configuration' component={ConfigurationStackNavigator} options={{
+        <Tab.Screen name='TabConfiguration' component={ConfigurationStackNavigator} options={{
             tabBarIcon:({focused}) => {
                 return (
                     <View>

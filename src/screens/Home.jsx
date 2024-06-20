@@ -12,7 +12,6 @@ const Home = ({navigation}) => {
           data={operations}
           renderItem={({item}) => <OperationItem item={item} navigation={navigation} />}
         />
-      <Image source={require('../../assets/bg_app.png')} style={styles.bg} ></Image>
     </View>
   )
 }
@@ -23,7 +22,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-between',
-    backgroundColor: colors.bg_white,
+    backgroundColor: colors.bg_cream,
     alignItems: 'center'
   },
   bg: {

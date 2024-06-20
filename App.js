@@ -5,17 +5,18 @@ import { ComicNeue_700Bold } from '@expo-google-fonts/comic-neue';
 import logo from './assets/logo.webp'
 import Header from './src/components/Header';
 import Navigator from './src/navigation/Navigator';
-
+import { Provider } from 'react-redux';
+import store from './src/store';
 
 
 const App = () => {
 
 	// obtener el tanaño del dispositivo
 	const { width, height } = useWindowDimensions()
-	const MIN_WIDTH = 440;  // Ancho mínimo requerido
-	const MIN_HEIGHT = 920; // Altura mínima requerida
+	const MIN_WIDTH = 300;  // Ancho mínimo requerido
+	const MIN_HEIGHT = 800; // Altura mínima requerida
 
-	let [fontsLoaded, fontError] = useFonts({
+	const [fontsLoaded, fontError] = useFonts({
 		ComicNeue_700Bold,
 	});
 
@@ -37,8 +38,10 @@ const App = () => {
 	return (
 		<View style={styles.container}>
 			<SafeAreaView style={styles.containerSafe}>
-				<Header logourl={logo} />
-				<Navigator />
+				<Provider store={store}>
+					<Header logourl={logo} />
+					<Navigator />
+				</Provider>
 			</SafeAreaView>
 		</View>
 	);
@@ -66,6 +69,6 @@ const styles = StyleSheet.create({
 	containerSafe: {
 		flex: 1,
 		marginTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-		backgroundColor: colors.bg_white,
+		backgroundColor: colors.bg_cream,
 	},
 });

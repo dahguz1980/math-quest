@@ -1,14 +1,17 @@
 [ 
     { 
         "id": 1,
-        "name": "SUMAR"
+        "name": "SUMAR",
+        "logo_light": "suma_ligth.png"
     },
     {
         "id": 2,
-        "name": "RESTAR"
+        "name": "RESTAR",
+        "logo_light": "resta_light.png"
     },
     {
         "id": 3, 
-        "name": "MULTIPLICACIÓN"
+        "name": "MULTIPLICAR",
+        "logo_light": "multiplicacion_light.png"
     }
 ]

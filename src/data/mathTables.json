@@ -3,6 +3,7 @@
         "id": 1,
         "name": "Tabla 1",
         "shortName": 1,
+        "logo": "num_1.png",
         "idOperation" : 1,
         "operations": [ 
             {
@@ -55,174 +56,203 @@
         "id": 2,
         "name": "Tabla 2",
         "shortName": 2,
+        "logo": "num_2.png",
         "idOperation" : 1
     },
     {
         "id": 3,
         "name": "Tabla 3",
         "shortName": 3,
+        "logo": "num_3.png",
         "idOperation" : 1
     },
     {
         "id": 4,
         "name": "Tabla 4",
         "shortName": 4,
+        "logo": "num_4.png",
         "idOperation" : 1
     },
     {
         "id": 5,
         "name": "Tabla 5",
         "shortName": 5,
+        "logo": "num_5.png",
         "idOperation" : 1
     },
     {
         "id": 6,
         "name": "Tabla 6",
         "shortName": 6,
+        "logo": "num_6.png",
         "idOperation" : 1
     },
     {
         "id": 7,
         "name": "Tabla 7",
         "shortName": 7,
+        "logo": "num_7.png",
         "idOperation" : 1
     },
     {
         "id": 8,
         "name": "Tabla 8",
         "shortName": 8,
+        "logo": "num_8.png",
         "idOperation" : 1
     },
     {
         "id": 9,
         "name": "Tabla 9",
         "shortName": 9,
+        "logo": "num_9.png",
         "idOperation" : 1
     },
     {
         "id": 10,
         "name": "Tabla 10",
         "shortName": 10,
+        "logo": "num_10.png",
         "idOperation" : 1
     },
     {
         "id": 11,
         "name": "Tabla 1",
         "shortName": 1,
+        "logo": "num_1.png",
         "idOperation" : 2
     },
     {
         "id": 12,
         "name": "Tabla 2",
         "shortName": 2,
+        "logo": "num_2.png",
         "idOperation" : 2
     },
     {
         "id": 13,
         "name": "Tabla 3",
         "shortName": 3,
+        "logo": "num_3.png",
         "idOperation" : 2
     },
     {
         "id": 14,
         "name": "Tabla 4",
         "shortName": 4,
+        "logo": "num_4.png",
         "idOperation" : 2
     },
     {
         "id": 15,
         "name": "Tabla 5",
         "shortName": 5,
+        "logo": "num_5.png",
         "idOperation" : 2
     },
     {
         "id": 16,
         "name": "Tabla 6",
         "shortName": 6,
+        "logo": "num_6.png",
         "idOperation" : 2
     },
     {
         "id": 17,
         "name": "Tabla 7",
         "shortName": 7,
+        "logo": "num_7.png",
         "idOperation" : 2
     },
     {
         "id": 18,
         "name": "Tabla 8",
         "shortName": 8,
+        "logo": "num_8.png",
         "idOperation" : 2
     },
     {
         "id": 19,
         "name": "Tabla 9",
         "shortName": 9,
+        "logo": "num_9.png",
         "idOperation" : 2
     },
     {
         "id": 20,
         "name": "Tabla 10",
         "shortName": 10,
+        "logo": "num_10.png",
         "idOperation" : 2
     },
     {
         "id": 21,
         "name": "Tabla 1",
         "shortName": 1,
+        "logo": "num_1.png",
         "idOperation" : 3
     },
     {
         "id": 22,
         "name": "Tabla 2",
         "shortName": 2,
+        "logo": "num_2.png",
         "idOperation" : 3
     },
     {
         "id": 23,
         "name": "Tabla 3",
         "shortName": 3,
+        "logo": "num_3.png",
         "idOperation" : 3
     },
     {
         "id": 24,
         "name": "Tabla 4",
         "shortName": 4,
+        "logo": "num_4.png",
         "idOperation" : 3
     },
     {
         "id": 25,
         "name": "Tabla 5",
         "shortName": 5,
+        "logo": "num_5.png",
         "idOperation" : 3
     },
     {
         "id": 26,
         "name": "Tabla 6",
         "shortName": 6,
+        "logo": "num_6.png",
         "idOperation" : 3
     },
     {
         "id": 27,
         "name": "Tabla 7",
         "shortName": 7,
+        "logo": "num_7.png",
         "idOperation" : 3
     },
     {
         "id": 28,
         "name": "Tabla 8",
         "shortName": 8,
+        "logo": "num_8.png",
         "idOperation" : 3
     },
     {
         "id": 29,
         "name": "Tabla 9",
         "shortName": 9,
+        "logo": "num_9.png",
         "idOperation" : 3
     },
     {
         "id": 30,
         "name": "Tabla 10",
         "shortName": 10,
+        "logo": "num_10.png",
         "idOperation" : 3
     }
     

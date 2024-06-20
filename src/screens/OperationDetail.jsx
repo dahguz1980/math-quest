@@ -1,21 +1,27 @@
-import { Platform, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Platform, StyleSheet, Text, View } from 'react-native'
 import Timer from '../components/Timer'
 import { colors } from '../global/colors'
+import { useSelector } from 'react-redux';
 
 const OperationDetail = ({ route}) => {
 
     const { tableId } = route.params;
+    const difficulty = useSelector((state) => state.preference.difficulty)
 
     return (
         <View style={styles.container}>
             <View style={styles.info}>
                 <Text style={styles.infoText}>Correctas: <Text style={styles.correct}>12</Text></Text>
                 <Text style={styles.infoText}>Incorrectas: <Text style={styles.incorrect}>12</Text></Text>
-                <View style={styles.timer}>
-                <Text style={styles.timerText}>Tiempo</Text>
-                <Timer />
-            </View>
-                
+                {
+                    difficulty === 'HARD' ? 
+                    <View style={styles.timer}>
+                        <Text style={styles.timerText}>Tiempo</Text>
+                        <Timer />
+                    </View>
+                    :
+                    <Text>MODO {difficulty}</Text>
+                }
             </View>
             <Text>La tabla seleccionada fue {tableId}</Text>
         </View>
